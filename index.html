@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK 5 CHALLENGE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header id="site-header">
+        <h1>Mattia Pirrò</h1>
+        <p class="tagline"><strong>Studente Full Stack </strong>in formazione su Epicode 2026</p>
+        <nav>
+            <ul>
+                <li id="link-chi-sono">
+                    <a href="#chiSono"><i class="fa-solid fa-user"></i>Chi sono</a>
+                </li>
+                <li>
+                    <a href="#competenze"><i class="fa-solid fa-gauge-high"></i>Competenze</a>
+                </li>
+                <li>
+                    <a href="#esperienze"><i class="fa-solid fa-briefcase"></i>Esperienze</a>
+                </li>
+                <li>
+                    <a href="#progetti"><i class="fa-solid fa-folder-open"></i>Progetti</a>
+                </li>
+                <li>
+                    <a href="#contattami"><i class="fa-solid fa-envelope"></i>Contatti</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="chiSono">
+            <h2>Chi sono</h2>
+            <div class="bio">
+                <figure>
+                    <img src="assets/img/mattia-pirro.jpg" alt="Foto Profilo" class="avatar">
+                </figure>
+                <div class="text-bio">
+                    <p id="primo-paragrafo">
+                        Mi chiamo Mattia Pirrò e sto imparando a programmare. Studio sviluppo web con
+                        <strong>Epicode</strong> e ogni giorno aggiungo qualcosa di nuovo a questa pagine. Mi piace
+                        lavorare in gruppo, leggere documentazione tecnica e capire come funzionano le cose.
+                    </p>
+                    <p id="secondo-paragrafo">
+                        Vivo a Milano. Ho una formazione in <em>informatica</em> e ora sto approfondendo gli studi.
+                        Cerco un primo ruolo come sviluppatore frontend in un team che faccia front review e mentoring.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="competenze">
+            <h2>Competenze</h2>
+            <p>Le tecnologie che ho visto durante le prime settimane di corso.</p>
+            <ul class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Git e GitHub</li>
+                <li>Visual Studio Code</li>
+            </ul>
+        </section>
+        <section id="esperienze">
+            <h2>Esperienze</h2>
+            <p>Un riepilogo del mio percorso formativo e lavorativo recente.</p>
+            <div class="table-wrapper">
+                <table>
+                    <caption class="caption">Esperienze formative e lavorative</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Anno</th>
+                            <th scope="col">Ruolo</th>
+                            <th scope="col">Azienda/Scuola</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026</td>
+                            <td>Studente Full Stack</td>
+                            <td>Epicode</td>
+                        </tr>
+                        <tr>
+                            <td>2022 - 2026</td>
+                            <td>Tecnico R&D</td>
+                            <td>N.E.T. s.r.l, Pregnana Milanese</td>
+                        </tr>
+                        <tr>
+                            <td>2016 - 2021</td>
+                            <td>Studente di Informatica</td>
+                            <td>ITIS S. Cannizzaro, Rho</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="progetti">
+            <h2>Progetti</h2>
+            <p>I lavori fatti durante le settimane di corso. Ogni Card ha un Link al repository.</p>
+            <div class="project-grid">
+                <article class="project">
+                    <div>
+                        <h3>Pagina ricetta</h3>
+                        <p>
+                            Una pagina con titolo, ingredienti e procedura. Esercizio di markup semantico applicato a un
+                            contenuto reale.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)"><i class="fa-brands fa-github"></i>Vedi su GitHub</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <h3>Card di presentazione</h3>
+                        <p>
+                            Un biglietto digitale con nome, ruolo e link ai social. Pratica su tag semantici, link e
+                            immagini.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)"><i class="fa-brands fa-github"></i>Vedi su GitHub</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <h3>Portfolio personale</h3>
+                        <p>
+                            Questa pagina. Costruita da zero, dal markup HTML alla stilizzazione CSS, fino alla
+                            pubbilucazione su GitHub Pages.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)"><i class="fa-brands fa-github"></i>Vedi su GitHub</a>
+                    </div>
+                </article>
+            </div>
+            <div id="link-container">
+                <a id="link-progetti" href="javascript:void(0)"><i class="fa-solid fa-arrow-right"></i>Tutti i
+                    progetti
+                    in dettaglio</a>
+            </div>
+        </section>
+        <section id="contattami">
+            <h2>Contattami</h2>
+            <p>Premi il bottone per aprire il form di contatto.</p>
+            <button type="button" id="apri-contatti">Scrivimi</button>
+        </section>
+    </main>
+    <div id="overlay-contatti" class="overlay" hidden>
+        <div class="modal">
+            <button type="button" class="close" id="chiudi-contatti">×</button>
+            <form action="#">
+                <h2>Contattami</h2>
+                <p>Compila il form per scrivermi. Ti risponderò entro 24 ore.</p>
+                <label for="nome">Nome</label>
+                <br />
+                <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                <br />
+                <label for="email">Email</label>
+                <br />
+                <input type="email" id="email" name="email" placeholder="tu@esempio.it" required>
+                <br />
+                <label for="menu">Motivo del contatto</label>
+                <br />
+                <select id="menu" name="menu" required>
+                    <option value="Lavoro">Proposta di lavoro</option>
+                    <option value="Domanda">Domanda</option>
+                    <option value="collaborazione">Collaborazione</option>
+                    <option value="altro">Altro</option>
+                </select>
+                <br />
+                <label for="data">Data preferita per la risposta</label>
+                <br />
+                <input type="date" id="data" name="data" required>
+                <br />
+                <label for="messaggio">Messaggio</label>
+                <br />
+                <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui il tuo messaggio" rows="5"></textarea>
+                <br />
+                <div class="checkbox-container">
+                    <input type="checkbox" id="recontact" name="recontact" required>
+                    <label id="consenso" for="recontact">Accetto di essere ricontattato all'indirizzo indicato</label>
+                </div>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i>Invia</button>
+            </form>
+        </div>
+    </div>
+    <a href="#chiSono" class="back-to-top" aria-label="Torna in cima">↑</a>
+    <footer id="site-footer">
+        <div class="copyright">
+            <p>© 2026 Mattia Pirrò</p>
+        </div>
+        <div id="icons-container">
+            <div class="icone">
+                <a href="javascript:void(0)"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="icone">
+                <a href="javascript:void(0)"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="icone">
+                <a href="javascript:void(0)"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div class="icone">
+                <a href="javascript:void(0)"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+        <div class="link-right-footer">
+            <a href="#chiSono">Torna in cima ↑</a>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
