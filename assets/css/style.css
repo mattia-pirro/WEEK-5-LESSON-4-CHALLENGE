@@ -127,6 +127,18 @@ i {
 /* Main */
 /* 375px */
 
+@keyframes section-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 main {
     max-width: 375px;
     margin: 0 auto;
@@ -139,6 +151,27 @@ main section {
     border: 1px solid #e6e0d3;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    animation: section-in 750ms ease-out both;
+}
+
+main section:nth-of-type(1) {
+    animation-delay: 0ms;
+}
+
+main section:nth-of-type(2) {
+    animation-delay: 150ms;
+}
+
+main section:nth-of-type(3) {
+    animation-delay: 300ms;
+}
+
+main section:nth-of-type(4) {
+    animation-delay: 450ms;
+}
+
+main section:nth-of-type(5) {
+    animation-delay: 600ms;
 }
 
 h2 {
@@ -364,7 +397,7 @@ main section h2::before {
     border-left: 6px solid hsl(45, 90%, 50%);
 }
 
-@keyframes pulse-bagde {
+@keyframes pulse-badge {
 
     0%,
     100% {
@@ -386,7 +419,7 @@ main section h2::before {
     color: #ffffff;
     font-size: 0.75rem;
     border-radius: 0 8px 0 8px;
-    animation: pulse-badge 2s ease-in-out infinite;
+    animation: pulse-badge 2.5s cubic-bezier(0.68, -1.25, 0.27, 2.25) infinite;
     transform-origin: top right;
 }
 
@@ -803,5 +836,18 @@ form button:hover {
 
     h2 {
         font-size: clamp(1.75rem, 3.75vw, 2.25rem);
+    }
+}
+
+/* prefers-reduced-motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
