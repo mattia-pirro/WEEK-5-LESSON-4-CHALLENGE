@@ -17,6 +17,7 @@
 
 html {
     scroll-padding-top: 300px;
+    scrollbar-width: none;
 }
 
 /* Body */
@@ -130,7 +131,19 @@ i {
 @keyframes section-in {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes section-in-scroll {
+    from {
+        opacity: 0;
+        transform: translateY(160px);
     }
 
     to {
@@ -151,27 +164,13 @@ main section {
     border: 1px solid #e6e0d3;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    animation: section-in 750ms ease-out both;
+    animation: section-in-scroll ease-out both;
+    animation-timeline: view();
+    animation-range: entry 60% cover 40%;
 }
 
 main section:nth-of-type(1) {
-    animation-delay: 0ms;
-}
-
-main section:nth-of-type(2) {
-    animation-delay: 150ms;
-}
-
-main section:nth-of-type(3) {
-    animation-delay: 300ms;
-}
-
-main section:nth-of-type(4) {
-    animation-delay: 450ms;
-}
-
-main section:nth-of-type(5) {
-    animation-delay: 600ms;
+    animation: section-in 800ms ease-out both;
 }
 
 h2 {
@@ -514,24 +513,25 @@ main section h2::before {
     background-color: hsl(45, 90%, 60%);
     color: hsl(220, 60%, 30%);
     font-weight: 500;
-    transform: scale(1.08);
+    transform: scale(1.125);
     animation: pulse-ring-hover 1.8s ease-out infinite;
 }
 
 /* Footer */
 
 #site-footer {
+    padding: 36px;
     background-color: hsl(220, 40%, 15%);
     color: #ffffff;
     font-size: 0.9rem;
-    float: end;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    padding: 36px;
-    height: auto;
     gap: 16px;
 }
 
@@ -613,6 +613,28 @@ main section h2::before {
     }
 }
 
+@keyframes overlay-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modal-out {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -649,6 +671,14 @@ main section h2::before {
 
 .overlay:not([hidden]) .modal {
     animation: modal-in 900ms ease-out;
+}
+
+.overlay.closing {
+    animation: overlay-out 300ms ease-out 900ms forwards;
+}
+
+.overlay.closing .modal {
+    animation: modal-out 900ms ease-out 200ms forwards;
 }
 
 /* Form */
@@ -787,6 +817,10 @@ form button:hover {
         padding: 16px 32px 32px 32px;
     }
 
+    main section:nth-of-type(2) {
+        animation: section-in 800ms ease-out both;
+    }
+
     #chiSono .bio {
         flex-direction: row;
         align-items: flex-start;
@@ -808,6 +842,8 @@ form button:hover {
     .project-grid {
         flex-direction: row;
         align-items: stretch;
+        flex: 1;
+        min-width: 0;
     }
 
     #link-container {
@@ -825,6 +861,15 @@ form button:hover {
         height: 40px;
         padding: 2px 8px;
     }
+
+
+    @media screen and (max-height: 820px) {
+        main section:nth-of-type(2) {
+            animation: section-in-scroll ease-out both;
+            animation-timeline: view();
+            animation-range: entry 120% cover 60%;
+        }
+    }
 }
 
 /* 1280px */
@@ -836,6 +881,14 @@ form button:hover {
 
     h2 {
         font-size: clamp(1.75rem, 3.75vw, 2.25rem);
+    }
+
+    @media screen and (max-height: 875px) {
+        main section:nth-of-type(2) {
+            animation: section-in-scroll ease-out both;
+            animation-timeline: view();
+            animation-range: entry 110% cover 60%;
+        }
     }
 }
 

@@ -8,8 +8,12 @@ scrivimi.addEventListener('click', function () {
 });
 
 close.addEventListener('click', function () {
-    overlay.setAttribute('hidden', '');
-    document.body.style.overflow = '';
+    overlay.classList.add('closing');
+    setTimeout(() => {
+        overlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        overlay.classList.remove('closing');
+    }, 1400);
 });
 
 overlay.addEventListener('click', (event) => {
